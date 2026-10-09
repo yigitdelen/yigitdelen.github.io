@@ -1,15 +1,15 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="tr" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yiğit Delen | Mobile & Full-Stack Developer</title>
-  <meta name="description" content="Yiğit Delen - React Native, Expo, Python & FastAPI ile modern mobil uygulamalar ve sistemler geliştiren yazılımcı portfolyosu.">
+  <title>Yiğit Delen | Bilgisayar Mühendisliği & Otonom Sistemler</title>
+  <meta name="description" content="Yiğit Delen - İstanbul Üniversitesi-Cerrahpaşa Bilgisayar Mühendisliği Öğrencisi (3.48 GPA). Otonom İHA sistemleri, Bilgisayarlı Görü (Computer Vision), Full-Stack Mobil & DevOps mühendisi.">
   
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -27,16 +27,18 @@
           },
           colors: {
             brand: {
-              50: '#f5f3ff',
-              100: '#ede9fe',
               400: '#a78bfa',
               500: '#8b5cf6',
               600: '#7c3aed',
-              raw: '#6366f1',
+            },
+            cyber: {
+              cyan: '#06b6d4',
+              emerald: '#10b981',
+              blue: '#3b82f6',
             },
             surface: {
-              bg: '#090d16',
-              card: 'rgba(17, 24, 39, 0.7)',
+              bg: '#080c14',
+              card: 'rgba(15, 23, 42, 0.75)',
               border: 'rgba(255, 255, 255, 0.08)',
             }
           }
@@ -52,64 +54,70 @@
       overflow-x: hidden;
     }
     
-    .glow-bg {
-      position: absolute;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(139, 92, 246, 0.05) 50%, transparent 70%);
-      filter: blur(60px);
-      z-index: -1;
-      pointer-events: none;
+    .grid-bg {
+      background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 44px 44px;
     }
-    
-    .glass-card {
-      background: rgba(15, 23, 42, 0.65);
+
+    .glow-blob {
+      position: absolute;
+      width: 550px;
+      height: 550px;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.18;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .glass-panel {
+      background: rgba(13, 19, 33, 0.7);
       backdrop-filter: blur(16px);
       border: 1px solid rgba(255, 255, 255, 0.08);
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
-    .glass-card:hover {
+    .glass-panel:hover {
       border-color: rgba(139, 92, 246, 0.35);
-      transform: translateY(-4px);
-      box-shadow: 0 12px 30px -10px rgba(99, 102, 241, 0.2);
-    }
-
-    .badge-gradient {
-      background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(168, 85, 247, 0.15));
-      border: 1px solid rgba(139, 92, 246, 0.3);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 36px -12px rgba(139, 92, 246, 0.2);
     }
   </style>
 </head>
-<body class="selection:bg-brand-500 selection:text-white">
+<body class="grid-bg selection:bg-brand-500 selection:text-white font-sans">
 
-  <!-- Ambient Glow Effects -->
-  <div class="glow-bg top-[-100px] left-[15%]"></div>
-  <div class="glow-bg top-[40%] right-[10%]"></div>
+  <!-- Glow Ambient Elements -->
+  <div class="glow-blob bg-purple-600 top-[-100px] left-[10%]"></div>
+  <div class="glow-blob bg-cyan-600 top-[35%] right-[5%]"></div>
+  <div class="glow-blob bg-emerald-600 bottom-[10%] left-[20%]"></div>
 
   <!-- NAVBAR -->
-  <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-surface-bg/75 border-b border-surface-border">
+  <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-surface-bg/80 border-b border-surface-border">
     <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
       <a href="#" class="flex items-center gap-2 group">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center font-extrabold text-white text-lg shadow-lg shadow-brand-500/25 group-hover:scale-105 transition-transform">
-          Y
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 via-indigo-600 to-cyan-500 flex items-center justify-center font-mono font-bold text-white text-base shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform">
+          YD
         </div>
-        <span class="font-bold text-lg tracking-tight text-white group-hover:text-brand-400 transition-colors">
-          yigitdelen<span class="text-brand-500">.</span>
-        </span>
+        <div class="flex flex-col">
+          <span class="font-bold text-base tracking-tight text-white group-hover:text-brand-400 transition-colors">
+            Yiğit Delen
+          </span>
+          <span class="text-[10px] font-mono text-slate-400">İÜC · Bilgisayar Müh.</span>
+        </div>
       </a>
 
-      <!-- Desktop Nav -->
+      <!-- Desktop Navigation -->
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
         <a href="#about" class="hover:text-white transition-colors">Hakkımda</a>
-        <a href="#projects" class="hover:text-white transition-colors">Projeler</a>
-        <a href="#skills" class="hover:text-white transition-colors">Yetenekler</a>
-        <a href="#contact" class="px-4 py-2 rounded-lg bg-white/5 hover:bg-brand-500 hover:text-white border border-white/10 hover:border-transparent text-slate-200 transition-all">
+        <a href="#expertise" class="hover:text-white transition-colors">Uzmanlık & Projeler</a>
+        <a href="#stack" class="hover:text-white transition-colors">Tech Stack</a>
+        <a href="#contact" class="px-4 py-2 rounded-lg bg-brand-500/10 hover:bg-brand-500 hover:text-white border border-brand-500/30 hover:border-transparent text-brand-300 font-semibold transition-all">
           İletişim
         </a>
       </nav>
 
-      <!-- Mobile Menu Button -->
+      <!-- Mobile Toggle -->
       <button id="mobile-toggle" class="md:hidden p-2 text-slate-400 hover:text-white">
         <i data-lucide="menu" class="w-6 h-6"></i>
       </button>
@@ -118,264 +126,453 @@
     <!-- Mobile Drawer -->
     <div id="mobile-menu" class="hidden md:hidden px-6 py-4 bg-surface-bg/95 border-b border-surface-border flex flex-col gap-4 text-sm font-medium text-slate-300">
       <a href="#about" class="hover:text-white py-1">Hakkımda</a>
-      <a href="#projects" class="hover:text-white py-1">Projeler</a>
-      <a href="#skills" class="hover:text-white py-1">Yetenekler</a>
+      <a href="#expertise" class="hover:text-white py-1">Uzmanlık & Projeler</a>
+      <a href="#stack" class="hover:text-white py-1">Tech Stack</a>
       <a href="#contact" class="hover:text-white py-1 text-brand-400">İletişime Geç</a>
     </div>
   </header>
 
   <!-- HERO SECTION -->
   <main class="max-w-6xl mx-auto px-6 pt-36 pb-20">
-    <section class="min-h-[75vh] flex flex-col justify-center">
-      <!-- Status Badge -->
-      <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full badge-gradient text-xs font-semibold text-brand-400 mb-8 w-fit">
-        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
-        <span>Yeni Fırsatlara & Projelere Açık</span>
+    <section class="min-h-[80vh] flex flex-col justify-center">
+      
+      <!-- Badges Row -->
+      <div class="flex flex-wrap items-center gap-3 mb-8">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/30 text-xs font-semibold text-brand-300">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>İÜC Bilgisayar Mühendisliği (3. Sınıf)</span>
+        </div>
+        <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-xs font-mono font-bold text-emerald-400">
+          <i data-lucide="award" class="w-3.5 h-3.5"></i>
+          <span>GPA: 3.48 / 4.00</span>
+        </div>
+        <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-xs font-mono font-medium text-cyan-300">
+          <i data-lucide="crosshair" class="w-3.5 h-3.5"></i>
+          <span>Çelebi İHA Takımı · TEKNOFEST</span>
+        </div>
       </div>
 
+      <!-- Main Headline -->
       <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold text-white tracking-tight leading-[1.1] mb-6">
-        Fikirleri modern mobil & <br class="hidden sm:inline" />
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 via-indigo-300 to-purple-400">
-          arka plan sistemlerine
-        </span> dönüştürüyorum.
+        Otonom Sistemler, Bilgisayarlı Görü & <br class="hidden sm:inline" />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 via-indigo-300 to-cyan-400">
+          Full-Stack Mühendisliği.
+        </span>
       </h1>
 
-      <p class="text-lg sm:text-xl text-slate-400 max-w-2xl leading-relaxed mb-10">
-        Merhaba, ben <span class="text-white font-semibold">Yiğit Delen</span>. React Native, Expo ve Python (FastAPI) ile kullanıcı odaklı, akıcı ve yüksek performanslı dijital deneyimler geliştiriyorum.
+      <p class="text-lg sm:text-xl text-slate-300 max-w-3xl leading-relaxed mb-10">
+        Akademik başarımı pratik saha ve yarışma tecrübesiyle birleştiriyorum. <span class="text-white font-semibold">ArduPilot & Edge AI</span> destekli otonom İHA'lardan, <span class="text-white font-semibold">React Native & FastAPI</span> tabanlı ölçeklenebilir mobil ekosistemlere kadar uçtan uca mimariler inşa ediyorum.
       </p>
 
+      <!-- CTA Buttons -->
       <div class="flex flex-wrap items-center gap-4">
-        <a href="#projects" class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white font-semibold flex items-center gap-2 shadow-lg shadow-brand-600/30 hover:scale-[1.02] transition-all">
-          <span>Projelerimi İncele</span>
-          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        <a href="#expertise" class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-brand-600 via-indigo-600 to-cyan-600 hover:brightness-110 text-white font-semibold flex items-center gap-2 shadow-lg shadow-brand-600/30 hover:scale-[1.02] transition-all">
+          <span>Saha & Proje Deneyimlerim</span>
+          <i data-lucide="arrow-down" class="w-4 h-4"></i>
         </a>
         
         <a href="https://github.com/yigitdelen" target="_blank" rel="noopener noreferrer" class="px-7 py-3.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 text-slate-200 border border-slate-700 font-semibold flex items-center gap-2 hover:border-slate-500 transition-all">
           <i data-lucide="github" class="w-5 h-5"></i>
           <span>GitHub Profilim</span>
         </a>
+
+        <a href="mailto:yigitdelen06@gmail.com" class="px-5 py-3.5 rounded-xl bg-slate-900/50 hover:bg-slate-800/80 text-slate-300 border border-slate-800 font-semibold flex items-center gap-2 transition-all">
+          <i data-lucide="mail" class="w-4 h-4"></i>
+          <span>İletişime Geç</span>
+        </a>
       </div>
     </section>
 
-    <!-- FEATURED PROJECT: FLICK -->
-    <section id="projects" class="py-24 border-t border-surface-border">
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
-        <div>
-          <span class="text-xs font-mono uppercase tracking-wider text-brand-400">Öne Çıkan Çalışma</span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Flick Mobile App</h2>
-        </div>
-        <p class="text-slate-400 text-sm max-w-md mt-4 md:mt-0">
-          Kişiselleştirilmiş film keşif deneyimi sunan, modern swipe mimarili full-stack mobil uygulama.
-        </p>
-      </div>
-
-      <!-- Main Project Card -->
-      <div class="glass-card rounded-2xl p-8 sm:p-10 relative overflow-hidden group">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          
-          <div class="lg:col-span-7 space-y-6">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-purple-500/10 border border-purple-500/30 text-purple-300 text-xs font-mono">
-              <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
-              Start-up Projesi / Aktif Geliştirme
-            </div>
-
-            <h3 class="text-2xl sm:text-3xl font-bold text-white">
-              Flick: Sinema & Dizi Keşif Platformu
-            </h3>
-
-            <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
-              Kullanıcıların ruh haline ve tercihlerine göre filmleri kart kaydırma (swipe) mekanikleriyle keşfetmesini sağlayan, özel izleme listesi (Watchlist) ve geçmiş takibi sunan yeni nesil mobil platform.
-            </p>
-
-            <!-- Features list -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-slate-300">
-              <div class="flex items-center gap-2">
-                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
-                <span>Tinder-tarzı dinamik Swipe Keşfi</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
-                <span>FastAPI + TMDB gerçek zamanlı API</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
-                <span>İzleme Listesi & Detay Modalı</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
-                <span>Supabase Bulut Veritabanı Mimarisi</span>
-              </div>
-            </div>
-
-            <!-- Tech Badges -->
-            <div class="flex flex-wrap gap-2 pt-2">
-              <span class="px-3 py-1 rounded-lg bg-slate-800 text-xs font-medium text-slate-300 border border-slate-700">React Native</span>
-              <span class="px-3 py-1 rounded-lg bg-slate-800 text-xs font-medium text-slate-300 border border-slate-700">Expo Router</span>
-              <span class="px-3 py-1 rounded-lg bg-slate-800 text-xs font-medium text-slate-300 border border-slate-700">TypeScript</span>
-              <span class="px-3 py-1 rounded-lg bg-slate-800 text-xs font-medium text-slate-300 border border-slate-700">Python</span>
-              <span class="px-3 py-1 rounded-lg bg-slate-800 text-xs font-medium text-slate-300 border border-slate-700">FastAPI</span>
-              <span class="px-3 py-1 rounded-lg bg-slate-800 text-xs font-medium text-slate-300 border border-slate-700">Supabase</span>
-            </div>
-
-            <!-- Action -->
-            <div class="pt-4 flex items-center gap-4">
-              <a href="https://github.com/yigitdelen/flick" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-brand-400 hover:text-brand-300 transition-colors">
-                <i data-lucide="lock" class="w-4 h-4"></i>
-                <span>Repo Durumu: Private (Start-up)</span>
-              </a>
-            </div>
-          </div>
-
-          <!-- Decorative Terminal Card -->
-          <div class="lg:col-span-5 bg-slate-950/80 border border-slate-800 rounded-xl p-5 font-mono text-xs shadow-2xl">
-            <div class="flex items-center justify-between pb-3 border-b border-slate-800 text-slate-500">
-              <div class="flex gap-1.5">
-                <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></span>
-                <span class="w-2.5 h-2.5 rounded-full bg-green-500/80"></span>
-              </div>
-              <span>flick-api.py</span>
-            </div>
-            <pre class="mt-4 text-slate-300 overflow-x-auto space-y-1">
-<span class="text-purple-400">from</span> fastapi <span class="text-purple-400">import</span> FastAPI
-<span class="text-purple-400">from</span> services <span class="text-purple-400">import</span> tmdb_engine
-
-app = FastAPI(title=<span class="text-emerald-300">"Flick Core Engine"</span>)
-
-<span class="text-indigo-400">@app.get</span>(<span class="text-emerald-300">"/api/movies/swipe"</span>)
-<span class="text-purple-400">async def</span> <span class="text-blue-400">get_swipe_deck</span>(user_id: str):
-    recommendations = <span class="text-purple-400">await</span> tmdb_engine.fetch(user_id)
-    <span class="text-purple-400">return</span> {<span class="text-emerald-300">"status"</span>: <span class="text-emerald-300">"success"</span>, <span class="text-emerald-300">"data"</span>: recommendations}
-            </pre>
-            <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-500">
-              <span>FastAPI Backend 200 OK</span>
-              <span class="text-emerald-400 flex items-center gap-1">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Live
-              </span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- SKILLS SECTION -->
-    <section id="skills" class="py-24 border-t border-surface-border">
+    <!-- EXPERTISE & PROJECTS SECTION -->
+    <section id="expertise" class="py-24 border-t border-surface-border">
       <div class="mb-14">
-        <span class="text-xs font-mono uppercase tracking-wider text-brand-400">Yetkinlikler</span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Teknoloji Yığını</h2>
+        <span class="text-xs font-mono uppercase tracking-wider text-brand-400">Odak Alanları & Çalışmalar</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Mühendislik Deneyimleri</h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- Frontend -->
-        <div class="glass-card rounded-2xl p-7">
-          <div class="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/20 text-brand-400 flex items-center justify-center mb-6">
-            <i data-lucide="smartphone" class="w-6 h-6"></i>
+      <div class="space-y-8">
+
+        <!-- 1. OTONOM İHA & ÇELEBİ İHA TAKIMI -->
+        <div class="glass-panel rounded-2xl p-8 sm:p-10 relative overflow-hidden group">
+          <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-6 mb-6">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center justify-center shrink-0">
+                <i data-lucide="plane" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <div class="flex items-center gap-2 flex-wrap">
+                  <h3 class="text-2xl font-bold text-white">Otonom Hava Araçları & İHA Sistemleri</h3>
+                  <span class="px-2.5 py-0.5 rounded-full text-xs font-mono bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">Çelebi İHA Takımı</span>
+                </div>
+                <p class="text-slate-400 text-sm mt-1">Gömülü sistemler, otonom uçuş yazılımları & gerçek zamanlı donanım entegrasyonu</p>
+              </div>
+            </div>
+            <span class="text-xs font-mono text-slate-500 bg-slate-900/80 px-3 py-1 rounded-md border border-slate-800 self-start">
+              TEKNOFEST Avcı İHA
+            </span>
           </div>
-          <h3 class="text-lg font-bold text-white mb-2">Mobil & Frontend</h3>
-          <p class="text-slate-400 text-sm mb-6">Kullanıcı dostu, 60fps akıcı arayüzler ve çapraz platform uygulamalar.</p>
-          <ul class="space-y-2 text-sm text-slate-300 font-mono">
-            <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-brand-400"></i> React Native</li>
-            <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-brand-400"></i> Expo & Expo Router</li>
-            <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-brand-400"></i> TypeScript / JavaScript</li>
-            <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-brand-400"></i> UI/UX & Responsive Tasarım</li>
-          </ul>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-slate-300 mb-8">
+            <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800/80">
+              <h4 class="font-bold text-white mb-2 flex items-center gap-2 text-xs font-mono uppercase text-cyan-400">
+                <i data-lucide="cpu" class="w-4 h-4"></i> ArduPilot & MAVLink
+              </h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Pixhawk uçuş kartlarında açık kaynaklı C++ ArduPilot mimarisi. MAVLink protokolü ile yer istasyonu, Pixhawk ve araç içi Raspberry Pi 5 arasında anlık telemetri ve komut köprüsü.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800/80">
+              <h4 class="font-bold text-white mb-2 flex items-center gap-2 text-xs font-mono uppercase text-cyan-400">
+                <i data-lucide="play" class="w-4 h-4"></i> SITL & Gazebo Simülasyonu
+              </h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Uçuş risklerini sıfıra indirmek adına Software-in-the-Loop (SITL) ve Gazebo 3D fizik simülasyon ortamlarında otonom rota takibi, kalkış-iniş ve dinamik hedef kilitlenme testleri.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800/80">
+              <h4 class="font-bold text-white mb-2 flex items-center gap-2 text-xs font-mono uppercase text-cyan-400">
+                <i data-lucide="flag" class="w-4 h-4"></i> Saha & Yarışma Deneyimi
+              </h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                TEKNOFEST gibi zorlu mühendislik yarışmalarında sahada otonom hedef tespiti ve takip algoritmalarının gerçek uçuş koşullarında test ve optimizasyonu.
+              </p>
+            </div>
+          </div>
+
+          <!-- Tech Tags -->
+          <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800/80">
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-xs font-mono text-slate-300">ArduPilot</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-xs font-mono text-slate-300">MAVLink</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-xs font-mono text-slate-300">Pixhawk</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-xs font-mono text-slate-300">Raspberry Pi 5</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-xs font-mono text-slate-300">C++</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-xs font-mono text-slate-300">SITL</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-xs font-mono text-slate-300">Gazebo</span>
+          </div>
         </div>
 
-        <!-- Backend -->
-        <div class="glass-card rounded-2xl p-7">
-          <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center mb-6">
-            <i data-lucide="server" class="w-6 h-6"></i>
+        <!-- 2. YAPAY ZEKA & BİLGİSAYARLI GÖRÜ (COMPUTER VISION & EDGE AI) -->
+        <div class="glass-panel rounded-2xl p-8 sm:p-10 relative overflow-hidden group">
+          <div class="flex items-start gap-4 mb-6">
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center shrink-0">
+              <i data-lucide="eye" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold text-white">Yapay Zeka & Bilgisayarlı Görü (Computer Vision)</h3>
+              <p class="text-slate-400 text-sm mt-1">Görsel verilerin gerçek zamanlı işlenmesi, nesne tespiti ve Edge AI optimizasyonları</p>
+            </div>
           </div>
-          <h3 class="text-lg font-bold text-white mb-2">Backend & API</h3>
-          <p class="text-slate-400 text-sm mb-6">Ölçeklenebilir, modern ve asenkron mikroservis mimarileri.</p>
-          <ul class="space-y-2 text-sm text-slate-300 font-mono">
-            <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-indigo-400"></i> Python 3</li>
-            <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-indigo-400"></i> FastAPI</li>
-            <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-indigo-400"></i> RESTful API Tasarımı</li>
-            <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-indigo-400"></i> Supabase / PostgreSQL</li>
-          </ul>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-slate-300 mb-8">
+            <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800/80">
+              <h4 class="font-bold text-white mb-2 flex items-center gap-2 text-xs font-mono uppercase text-emerald-400">
+                <i data-lucide="scan" class="w-4 h-4"></i> YOLO & Nesne Tespiti
+              </h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Milisaniyeler mertebesinde hedef tespiti ve takibi sağlayan YOLO modellerinin özelleştirilmiş veri kümeleriyle eğitimi, ağırlık optimizasyonları ve mAP iyileştirmeleri.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800/80">
+              <h4 class="font-bold text-white mb-2 flex items-center gap-2 text-xs font-mono uppercase text-emerald-400">
+                <i data-lucide="layers" class="w-4 h-4"></i> Veri Pipeline & OpenCV
+              </h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Label Studio ile ham görüntü etiketleme, OpenCV ve Python ile görüntü ön işleme, veri zenginleştirme (augmentation) ve doğrulama süreçlerinin uçtan uca yönetimi.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800/80">
+              <h4 class="font-bold text-white mb-2 flex items-center gap-2 text-xs font-mono uppercase text-emerald-400">
+                <i data-lucide="zap" class="w-4 h-4"></i> Kenar Bilişim (Edge AI)
+              </h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Eğitilen modellerin uçuş donanımı üzerindeki kısıtlı kaynaklara (Raspberry Pi 5) sahip cihazlarda yüksek FPS ve düşük gecikmeyle çalışması için model optimizasyonu.
+              </p>
+            </div>
+          </div>
+
+          <!-- Tech Tags -->
+          <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800/80">
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-xs font-mono text-slate-300">YOLO</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-xs font-mono text-slate-300">OpenCV</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-xs font-mono text-slate-300">Label Studio</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-xs font-mono text-slate-300">Python</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-xs font-mono text-slate-300">Edge AI</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-xs font-mono text-slate-300">Raspberry Pi 5</span>
+          </div>
         </div>
 
-        <!-- Tools & Cloud -->
-        <div class="glass-card rounded-2xl p-7">
-          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center mb-6">
-            <i data-lucide="git-branch" class="w-6 h-6"></i>
+        <!-- 3. FULL-STACK MOBİL & START-UP: FLICK -->
+        <div class="glass-panel rounded-2xl p-8 sm:p-10 relative overflow-hidden group">
+          <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-6 mb-6">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/30 text-brand-400 flex items-center justify-center shrink-0">
+                <i data-lucide="smartphone" class="w-6 h-6"></i>
+              </div>
+              <div>
+                <div class="flex items-center gap-2 flex-wrap">
+                  <h3 class="text-2xl font-bold text-white">Full-Stack Mobil Uygulama & Start-up</h3>
+                  <span class="px-2.5 py-0.5 rounded-full text-xs font-mono bg-purple-500/20 text-purple-300 border border-purple-500/30">Ürün: FLICK</span>
+                </div>
+                <p class="text-slate-400 text-sm mt-1">Kullanıcıya dokunan, baştan sona mimarisi kurulmuş dinamik mobil ürün</p>
+              </div>
+            </div>
+            <a href="https://github.com/yigitdelen/flick" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-slate-900 border border-slate-700 text-xs font-mono text-brand-300 hover:border-brand-500 self-start transition-colors">
+              <i data-lucide="lock" class="w-3.5 h-3.5"></i>
+              <span>github.com/yigitdelen/flick</span>
+            </a>
           </div>
-          <h3 class="text-lg font-bold text-white mb-2">Araçlar & Bulut</h3>
-          <p class="text-slate-400 text-sm mb-6">Modern versiyon kontrolü, dağıtım ve geliştirici araçları.</p>
-          <ul class="space-y-2 text-sm text-slate-300 font-mono">
-            <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-emerald-400"></i> Git & GitHub</li>
-            <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-emerald-400"></i> DigitalOcean / Bulut VPS</li>
-            <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-emerald-400"></i> Domain Yönetimi & DNS</li>
-            <li class="flex items-center gap-2"><i data-lucide="chevron-right" class="w-3.5 h-3.5 text-emerald-400"></i> Postman / API Testing</li>
-          </ul>
+
+          <p class="text-sm text-slate-300 leading-relaxed mb-6">
+            <span class="text-white font-semibold">FLICK:</span> Kullanıcıların film tercihlerine göre etkileşimli kart kaydırma (swipe) mekanikleriyle kişiselleştirilmiş film önerileri sunan, modern izleme listesi ve geçmiş yönetimi barındıran start-up projesi.
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-slate-300 mb-8">
+            <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800/80">
+              <h4 class="font-bold text-white mb-2 flex items-center gap-2 text-xs font-mono uppercase text-brand-400">
+                <i data-lucide="layout" class="w-4 h-4"></i> Frontend Mimarisi
+              </h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                React Native ve TypeScript ile 60fps akıcı swipe deneyimi, modüler bileşen hiyerarşisi, özel dark theme tasarımı ve haptic feedback entegrasyonu.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800/80">
+              <h4 class="font-bold text-white mb-2 flex items-center gap-2 text-xs font-mono uppercase text-brand-400">
+                <i data-lucide="server" class="w-4 h-4"></i> Backend & API Motoru
+              </h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                FastAPI (Python) mimarisiyle asenkron, yüksek hızlı REST API servisleri, TMDB entegrasyonu ve Supabase bulut veritabanı altyapısı.
+              </p>
+            </div>
+          </div>
+
+          <!-- Tech Tags -->
+          <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800/80">
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-xs font-mono text-slate-300">React Native</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-xs font-mono text-slate-300">TypeScript</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-xs font-mono text-slate-300">FastAPI</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-xs font-mono text-slate-300">Python</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-xs font-mono text-slate-300">Supabase</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-xs font-mono text-slate-300">Expo Router</span>
+          </div>
         </div>
+
+        <!-- 4. DEVOPS, BULUT & PLATFORM MÜHENDİSLİĞİ -->
+        <div class="glass-panel rounded-2xl p-8 sm:p-10 relative overflow-hidden group">
+          <div class="flex items-start gap-4 mb-6">
+            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/30 text-indigo-400 flex items-center justify-center shrink-0">
+              <i data-lucide="cloud" class="w-6 h-6"></i>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold text-white">DevOps, Bulut & Platform Mühendisliği</h3>
+              <p class="text-slate-400 text-sm mt-1">Yazılımların güvenli, ölçeklenebilir ve otomatik dağıtımı (CI/CD & Cloud)</p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm text-slate-300 mb-8">
+            <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800/80">
+              <h4 class="font-bold text-white mb-2 flex items-center gap-2 text-xs font-mono uppercase text-indigo-400">
+                <i data-lucide="box" class="w-4 h-4"></i> Konteynerleştirme
+              </h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Docker ile servisleri tüm bağımlılıklarından soyutlayarak taşınabilirlik, tutarlı çalışma ortamı ve çevre izolasyonu.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800/80">
+              <h4 class="font-bold text-white mb-2 flex items-center gap-2 text-xs font-mono uppercase text-indigo-400">
+                <i data-lucide="git-merge" class="w-4 h-4"></i> CI/CD & Otomasyon
+              </h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                Test otomasyonu, otomatik build ve production dağıtım adımlarını sağlayan Continuous Integration & Continuous Deployment hatları.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-xl bg-slate-900/50 border border-slate-800/80">
+              <h4 class="font-bold text-white mb-2 flex items-center gap-2 text-xs font-mono uppercase text-indigo-400">
+                <i data-lucide="server" class="w-4 h-4"></i> Bulut & Platform
+              </h4>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                AWS ve modern VPS bulut altyapıları üzerinde sunucu yönetimi, mimari ölçeklenme ve altyapı takibi prensipleri.
+              </p>
+            </div>
+          </div>
+
+          <!-- Tech Tags -->
+          <div class="flex flex-wrap gap-2 pt-2 border-t border-slate-800/80">
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-xs font-mono text-slate-300">Docker</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-xs font-mono text-slate-300">AWS</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-xs font-mono text-slate-300">CI/CD Pipelines</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-xs font-mono text-slate-300">Git & GitHub</span>
+            <span class="px-2.5 py-1 rounded-md bg-slate-800/80 text-xs font-mono text-slate-300">Linux</span>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- ABOUT SECTION -->
+    <!-- TECHNICAL STACK MATRIX -->
+    <section id="stack" class="py-24 border-t border-surface-border">
+      <div class="mb-14">
+        <span class="text-xs font-mono uppercase tracking-wider text-brand-400">Yetkinlik Haritası</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-2">Technical Stack & Araçlar</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        
+        <!-- Diller -->
+        <div class="glass-panel rounded-2xl p-6">
+          <div class="flex items-center gap-2 text-xs font-mono text-brand-400 mb-4">
+            <i data-lucide="code" class="w-4 h-4"></i>
+            <span>PROGRAMLAMA DİLLERİ</span>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700/80 text-sm font-mono text-white">C++</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700/80 text-sm font-mono text-white">Python</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700/80 text-sm font-mono text-white">TypeScript</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700/80 text-sm font-mono text-white">C#</span>
+          </div>
+        </div>
+
+        <!-- Gömülü & Otonom -->
+        <div class="glass-panel rounded-2xl p-6">
+          <div class="flex items-center gap-2 text-xs font-mono text-cyan-400 mb-4">
+            <i data-lucide="navigation" class="w-4 h-4"></i>
+            <span>GÖMÜLÜ & OTONOM SİSTEMLER</span>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700/80 text-sm font-mono text-white">ArduPilot</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700/80 text-sm font-mono text-white">MAVLink</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700/80 text-sm font-mono text-white">Raspberry Pi 5</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700/80 text-sm font-mono text-white">Pixhawk</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700/80 text-sm font-mono text-white">SITL</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700/80 text-sm font-mono text-white">Gazebo</span>
+          </div>
+        </div>
+
+        <!-- Yapay Zeka & Görü -->
+        <div class="glass-panel rounded-2xl p-6">
+          <div class="flex items-center gap-2 text-xs font-mono text-emerald-400 mb-4">
+            <i data-lucide="eye" class="w-4 h-4"></i>
+            <span>YAPAY ZEKA & GÖRÜ (CV)</span>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700/80 text-sm font-mono text-white">YOLO</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700/80 text-sm font-mono text-white">OpenCV</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700/80 text-sm font-mono text-white">Label Studio</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700/80 text-sm font-mono text-white">Edge AI</span>
+          </div>
+        </div>
+
+        <!-- Mobil & Backend -->
+        <div class="glass-panel rounded-2xl p-6">
+          <div class="flex items-center gap-2 text-xs font-mono text-purple-400 mb-4">
+            <i data-lucide="smartphone" class="w-4 h-4"></i>
+            <span>MOBİL & BACKEND</span>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700/80 text-sm font-mono text-white">React Native</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700/80 text-sm font-mono text-white">TypeScript</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700/80 text-sm font-mono text-white">FastAPI</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700/80 text-sm font-mono text-white">Supabase</span>
+          </div>
+        </div>
+
+        <!-- DevOps & Cloud -->
+        <div class="glass-panel rounded-2xl p-6 md:col-span-2 lg:col-span-2">
+          <div class="flex items-center gap-2 text-xs font-mono text-indigo-400 mb-4">
+            <i data-lucide="terminal" class="w-4 h-4"></i>
+            <span>DEVOPS, BULUT & PLATFORM</span>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700/80 text-sm font-mono text-white">Docker</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700/80 text-sm font-mono text-white">AWS</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700/80 text-sm font-mono text-white">CI/CD Pipelines</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700/80 text-sm font-mono text-white">Git & GitHub</span>
+            <span class="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-700/80 text-sm font-mono text-white">Linux CLI</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT & EDUCATION SECTION -->
     <section id="about" class="py-24 border-t border-surface-border">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
         <div class="lg:col-span-7 space-y-6">
           <span class="text-xs font-mono uppercase tracking-wider text-brand-400">Hakkımda</span>
           <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
-            Teknolojiyle Problem Çözmekten Keyif Alan Bir Geliştirici
+            Mühendislik Tutkusunu Saha Projeleriyle Yaşatan Bir Geliştirici
           </h2>
           <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
-            Yazılım geliştirme sürecine sadece kod yazmak olarak değil; kullanıcıların hayatını kolaylaştıran, estetik ve sağlam dijital ürünler ortaya koymak olarak bakıyorum.
+            İstanbul Üniversitesi-Cerrahpaşa’da Bilgisayar Mühendisliği 3. sınıf öğrencisi olarak eğitimime devam ediyorum. Akademik başarımı (<strong class="text-white">3.48 GPA</strong>) laboratuvar ve saha projeleriyle somut çıktılara dönüştürmeyi önemsiyorum.
           </p>
           <p class="text-slate-300 leading-relaxed text-sm sm:text-base">
-            Şu sıralar mobil odaklı mimariler, hızlı ve modern FastAPI backend servisleri ve start-up projeleri üzerine yoğunlaşıyorum. Sürekli yeni teknolojileri deneyimlemeyi ve kendimi geliştirmeyi ilke edindim.
+            Gömülü otonom sistemlerden, kenar bilişimde (Edge AI) çalışan bilgisayarlı görü algoritmalarına; kullanıcıya doğrudan dokunan modüler mobil uygulamalardan bulut DevOps altyapılarına kadar geniş bir spektrumda uçtan uca çözümler üretiyorum.
           </p>
         </div>
 
-        <div class="lg:col-span-5 flex justify-center">
-          <div class="glass-card rounded-2xl p-6 w-full max-w-sm border-brand-500/20">
-            <h4 class="text-white font-bold mb-4 flex items-center gap-2 text-sm">
-              <i data-lucide="info" class="w-4 h-4 text-brand-400"></i>
-              Özet Bilgiler
+        <div class="lg:col-span-5">
+          <div class="glass-panel rounded-2xl p-6 border-brand-500/20 space-y-4">
+            <h4 class="text-white font-bold flex items-center gap-2 text-sm">
+              <i data-lucide="graduation-cap" class="w-4 h-4 text-brand-400"></i>
+              Akademik & Kişisel Profil
             </h4>
-            <div class="space-y-3 text-xs text-slate-300">
-              <div class="flex justify-between py-2 border-b border-white/5">
-                <span class="text-slate-400">Konum</span>
-                <span class="font-medium text-white">Ankara / Türkiye</span>
+            
+            <div class="space-y-3 text-xs">
+              <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+                <span class="text-slate-400 block mb-0.5">Üniversite & Bölüm</span>
+                <span class="font-semibold text-white">İstanbul Üniversitesi-Cerrahpaşa</span>
+                <span class="text-slate-400 block mt-0.5">Bilgisayar Mühendisliği · 3. Sınıf</span>
               </div>
-              <div class="flex justify-between py-2 border-b border-white/5">
-                <span class="text-slate-400">Rol</span>
-                <span class="font-medium text-white">Mobile & Full-Stack Dev</span>
+
+              <div class="grid grid-cols-2 gap-3">
+                <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+                  <span class="text-slate-400 block mb-0.5">Genel Not Ortalaması</span>
+                  <span class="font-bold text-emerald-400 font-mono text-sm">3.48 / 4.00</span>
+                </div>
+                <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+                  <span class="text-slate-400 block mb-0.5">Takım & Yarışma</span>
+                  <span class="font-semibold text-cyan-300">Çelebi İHA · TEKNOFEST</span>
+                </div>
               </div>
-              <div class="flex justify-between py-2 border-b border-white/5">
-                <span class="text-slate-400">İlgi Alanları</span>
-                <span class="font-medium text-white">Start-up, UI/UX, API</span>
-              </div>
-              <div class="flex justify-between py-2">
+
+              <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 flex justify-between items-center">
                 <span class="text-slate-400">Durum</span>
-                <span class="text-emerald-400 font-medium">Aktif Üretiyor 🚀</span>
+                <span class="text-emerald-400 font-semibold flex items-center gap-1.5">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                  Aktif Projeler & Fırsatlar
+                </span>
               </div>
             </div>
           </div>
         </div>
+
       </div>
     </section>
 
     <!-- CONTACT SECTION -->
     <section id="contact" class="py-24 border-t border-surface-border">
-      <div class="glass-card rounded-3xl p-8 sm:p-14 text-center max-w-3xl mx-auto relative overflow-hidden">
+      <div class="glass-panel rounded-3xl p-8 sm:p-14 text-center max-w-3xl mx-auto relative overflow-hidden">
         <div class="inline-flex p-3 rounded-2xl bg-brand-500/10 text-brand-400 mb-6">
           <i data-lucide="mail" class="w-8 h-8"></i>
         </div>
 
         <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">
-          Bir Projen mi Var veya Tanışmak mı İstiyorsun?
+          Birlikte Yeni Projeler Üretelim
         </h2>
 
         <p class="text-slate-400 text-sm sm:text-base max-w-md mx-auto mb-8">
-          Fikirlerinizi tartışmak, ortak projeler geliştirmek veya sadece sohbet etmek için her zaman bir e-posta uzağındayım.
+          Otonom sistemler, bilgisayarlı görü, mobil ürünler veya mühendislik fırsatları için her zaman iletişime geçebilirsiniz.
         </p>
 
         <div class="flex flex-wrap items-center justify-center gap-4">
-          <a href="mailto:yigitdelen06@gmail.com" class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 text-white font-semibold flex items-center gap-2 shadow-lg shadow-brand-600/30 transition-all">
+          <a href="mailto:yigitdelen06@gmail.com" class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-brand-600 via-indigo-600 to-cyan-600 hover:brightness-110 text-white font-semibold flex items-center gap-2 shadow-lg shadow-brand-600/30 transition-all">
             <i data-lucide="send" class="w-4 h-4"></i>
             <span>yigitdelen06@gmail.com</span>
           </a>
@@ -387,12 +584,13 @@ app = FastAPI(title=<span class="text-emerald-300">"Flick Core Engine"</span>)
         </div>
       </div>
     </section>
+
   </main>
 
   <!-- FOOTER -->
   <footer class="border-t border-surface-border py-8 text-center text-xs text-slate-500">
     <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p>© 2026 Yiğit Delen. Tüm hakları saklıdır.</p>
+      <p>© 2026 Yiğit Delen · İstanbul Üniversitesi-Cerrahpaşa</p>
       <div class="flex items-center gap-6">
         <a href="https://github.com/yigitdelen" target="_blank" rel="noopener noreferrer" class="hover:text-slate-300 transition-colors">GitHub</a>
         <a href="mailto:yigitdelen06@gmail.com" class="hover:text-slate-300 transition-colors">E-posta</a>
